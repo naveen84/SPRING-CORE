@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+    <bean id="user1" class="com.naveen.User">
+	<property name="username" value="krishna"></property>
+	<property name="password" value="radha"></property>
+	<property name="age" value="24"></property>
+	</bean>
+	<bean id="user2" class="com.naveen.User">
+	<property name="username" value="ram"></property>
+	<property name="password" value="seetha"></property>
+	<property name="age" value="23"></property>
+	</bean>
+	<bean id="user3" class="com.naveen.User">
+	<property name="username" value="naveen"></property>
+	<property name="password" value="naveen"></property>
+	<property name="age" value="22"></property>
+	</bean>
+	<bean id = "customer1" class="com.naveen.Customer">
+	<constructor-arg value="CHENNAI" index="0"></constructor-arg>
+	<constructor-arg value="INDIA" index="1"></constructor-arg>
+	</bean>
+	<bean id = "customer2" class="com.naveen.Customer">
+	<constructor-arg value="HYDERABAD" index="0"></constructor-arg>
+	<constructor-arg value="INDIA" index="1"></constructor-arg>
+	</bean>
+	<bean id = "customer3" class="com.naveen.Customer">
+	<constructor-arg value="BANGLORE" index="0"></constructor-arg>
+	<constructor-arg value="INDIA" index="1"></constructor-arg>
+	</bean>
+<bean id="collectionInjection" class="com.naveen.CollectionInjection">
+<property name="users">
+<list>
+	<ref bean= "user1"/>
+	<ref bean= "user2"/>
+	<ref bean= "user3"/>
+	<bean id="user4" class="com.naveen.User">
+	<property name="username" value="virat"></property>
+	<property name="password" value="virat"></property>
+	<property name="age" value="24"></property>
+	</bean>	
+</list>
+</property>
+<property name="customer">
+<set>
+	<ref bean="customer1"></ref>
+	<ref bean="customer2"></ref>
+	<ref bean="customer3"></ref>
+</set>
+</property>
+<property name="contacts">
+<map>
+<entry key="krishna" value="1234567890"></entry>
+<entry key="ram" value="0987654321"></entry>
+</map>
+</property>
+<property name="emails">
+<props>
+<prop key="admin">admin@gmail.com</prop>
+<prop key="support">support@gmail.com</prop>
+</props>
+</property>
+</bean>
+
+</beans>

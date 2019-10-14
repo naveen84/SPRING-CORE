@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+<bean id="student" class="com.naveen.Student">
+<property name="id" value="1"/>
+<property name="name" value="krishna"/>
+<!--CONFIGURING THE SET TYPE DEPENDENCY  -->
+<property name="subjects">
+<set>
+<value>english</value>
+<value>maths</value>
+<value>science</value>
+</set>
+</property>
+<!-- CONFIGURING THE LIST TYPE DEPENDENCY -->
+<property name="marks">
+<list>
+<value>99</value>
+<value>100</value>
+<value>100</value>
+</list>
+</property>
+<!--CONFIGURING THE MAP TYPE DEPENDENCY  -->
+<property name="staff">
+<map>
+<entry key="english" value="ram"/>
+<entry key="maths"   value="durga"/>
+<entry key="science" value="albert"/>
+</map>
+</property>
+<!-- CONFIGURING THE PROPERTY TYPE DEPENDENCY -->
+<property name="grades">
+<props>
+<prop key="english">A</prop>
+<prop key="maths">A+</prop>
+<prop key="science">A+</prop>
+</props>
+</property>
+</bean>
+<bean id="t1" class="com.naveen.Teacher" scope="prototype">
+<!-- <property name="id" value="1"/>
+ --><property name="name" value="krishna"/>
+</bean>
+ <bean id="t2" class="com.naveen.Teacher">
+<property name="id" value="2"/>
+<property name="name" value="ram"/>
+</bean> 
+</beans>
